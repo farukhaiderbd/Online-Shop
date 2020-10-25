@@ -13,15 +13,15 @@
         $con=App\ContactInformation::where('ci_status',1)->where('ci_id',1)->firstOrFail();
     @endphp
     <title>{{$basic->basic_title}}</title>
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/main.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/blue.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/owl.transitions.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/animate.min.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/rateit.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="{{asset('contents/website')}}/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/main.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/blue.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/animate.min.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/rateit.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/font-awesome.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -432,28 +432,28 @@
           <div class="col-xs-12 col-sm-6 no-padding">
             <div class="clearfix payment-methods">
               <ul>
-                <li><img src="{{asset('contents/website')}}/assets/images/payments/1.png" alt=""></li>
-                <li><img src="{{asset('contents/website')}}/assets/images/payments/2.png" alt=""></li>
-                <li><img src="{{asset('contents/website')}}/assets/images/payments/3.png" alt=""></li>
-                <li><img src="{{asset('contents/website')}}/assets/images/payments/4.png" alt=""></li>
-                <li><img src="{{asset('contents/website')}}/assets/images/payments/5.png" alt=""></li>
+                <li><img src="{{asset('public/contents/website')}}/assets/images/payments/1.png" alt=""></li>
+                <li><img src="{{asset('public/contents/website')}}/assets/images/payments/2.png" alt=""></li>
+                <li><img src="{{asset('public/contents/website')}}/assets/images/payments/3.png" alt=""></li>
+                <li><img src="{{asset('public/contents/website')}}/assets/images/payments/4.png" alt=""></li>
+                <li><img src="{{asset('public/contents/website')}}/assets/images/payments/5.png" alt=""></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </footer>
-    <script src="{{asset('contents/website')}}/assets/js/jquery-1.11.1.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/bootstrap.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/bootstrap-hover-dropdown.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/owl.carousel.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/echo.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/bootstrap-slider.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/jquery.rateit.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/lightbox.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/bootstrap-select.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/wow.min.js"></script>
-    <script src="{{asset('contents/website')}}/assets/js/scripts.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/jquery-1.11.1.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/bootstrap.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/owl.carousel.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/echo.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/bootstrap-slider.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/jquery.rateit.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/lightbox.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/bootstrap-select.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/wow.min.js"></script>
+    <script src="{{asset('public/contents/website')}}/assets/js/scripts.js"></script>
   </body>
 </html>

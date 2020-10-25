@@ -8,14 +8,14 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('contents/admin')}}/assets/images/favicon.png">
-    <link href="{{asset('contents/admin')}}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{asset('contents/admin')}}/assets/plugins/morrisjs/morris.css" rel="stylesheet">
-    <link href="{{asset('contents/admin')}}/css/adminpress.css" rel="stylesheet">
-    <link href="{{asset('contents/admin')}}/css/colors/blue.css" id="theme" rel="stylesheet">
-    <link href="{{asset('contents/admin')}}/css/style.css" rel="stylesheet">
-    <script src="{{asset('contents/admin')}}/assets/plugins/jquery/jquery.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/sweetalert.min.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/contents/admin')}}/assets/images/favicon.png">
+    <link href="{{asset('public/contents/admin')}}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('public/contents/admin')}}/assets/plugins/morrisjs/morris.css" rel="stylesheet">
+    <link href="{{asset('public/contents/admin')}}/css/adminpress.css" rel="stylesheet">
+    <link href="{{asset('public/contents/admin')}}/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="{{asset('public/contents/admin')}}/css/style.css" rel="stylesheet">
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/js/sweetalert.min.js"></script>
 </head>
 <body class="fix-header fix-sidebar card-no-border">
     <div id="main-wrapper">
@@ -24,12 +24,12 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <b>
-                            <img src="{{asset('contents/admin')}}/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <img src="{{asset('contents/admin')}}/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="{{asset('public/contents/admin')}}/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="{{asset('public/contents/admin')}}/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                         </b>
                         <span>
-                         <img src="{{asset('contents/admin')}}/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <img src="{{asset('contents/admin')}}/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                         <img src="{{asset('public/contents/admin')}}/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <img src="{{asset('public/contents/admin')}}/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                        </span>
                     </a>
                 </div>
@@ -74,7 +74,7 @@
                                     <li>
                                         <div class="message-center">
                                             <a href="index.html#">
-                                                <div class="user-img"> <img src="{{asset('contents/admin')}}/assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('public/contents/admin')}}/assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
                                                 </div>
@@ -98,12 +98,12 @@
                             <div class="dropdown-menu dropdown-menu-right scale-up"> <a class="dropdown-item" href="index.html#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="index.html#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="index.html#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="index.html#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('contents/admin')}}/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('public/contents/admin')}}/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right scale-up">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <div class="u-img"><img src="{{asset('contents/admin')}}/assets/images/users/1.jpg" alt="user"></div>
+                                            <div class="u-img"><img src="{{asset('public/contents/admin')}}/assets/images/users/1.jpg" alt="user"></div>
                                             <div class="u-text">
                                                 <h4>{{Auth::user()->name}}</h4>
                                                 <p class="text-muted">{{Auth::user()->email}}</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
@@ -127,7 +127,7 @@
         <aside class="left-sidebar">
             <div class="scroll-sidebar">
                 <div class="user-profile">
-                    <div class="profile-img"> <img src="{{asset('contents/admin')}}/assets/images/users/profile.png" alt="user" />
+                    <div class="profile-img"> <img src="{{asset('public/contents/admin')}}/assets/images/users/profile.png" alt="user" />
                         <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
                     </div>
                     <div class="profile-text">
@@ -200,19 +200,19 @@
             <footer class="footer"> © 2017 Admin Press Admin by themedesigner.in </footer>
         </div>
     </div>
-    <script src="{{asset('contents/admin')}}/assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="{{asset('contents/admin')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/jquery.slimscroll.js"></script>
-    <script src="{{asset('contents/admin')}}/js/waves.js"></script>
-    <script src="{{asset('contents/admin')}}/js/sidebarmenu.js"></script>
-    <script src="{{asset('contents/admin')}}/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/adminpress.min.js"></script>
-    <script src="{{asset('contents/admin')}}/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <script src="{{asset('contents/admin')}}/assets/plugins/raphael/raphael-min.js"></script>
-    <script src="{{asset('contents/admin')}}/assets/plugins/morrisjs/morris.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/dashboard1.js"></script>
-    <script src="{{asset('contents/admin')}}/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-    <script src="{{asset('contents/admin')}}/js/custom.js"></script>
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/js/jquery.slimscroll.js"></script>
+    <script src="{{asset('public/contents/admin')}}/js/waves.js"></script>
+    <script src="{{asset('public/contents/admin')}}/js/sidebarmenu.js"></script>
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/js/adminpress.min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/raphael/raphael-min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/morrisjs/morris.min.js"></script>
+    <script src="{{asset('public/contents/admin')}}/js/dashboard1.js"></script>
+    <script src="{{asset('public/contents/admin')}}/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="{{asset('public/contents/admin')}}/js/custom.js"></script>
     @stack('js')
 </body>
 
