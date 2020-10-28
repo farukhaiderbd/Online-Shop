@@ -162,6 +162,24 @@
                         @if(Auth::user()->role=='1')
                         <li> <a class="waves-effect waves-dark" href="{{url('admin/user')}}" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Users</span></a></li>
                         @endif
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu">Category</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('create_category')}}">Add Category</a></li>
+                                <li><a href="{{route('all_category')}}">All Category</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu">Sub-Category</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route("create_subcategory")}}">Add Sub-Category</a></li>
+                                <li><a href="{{route('all_subcategory')}}">All Sub-Category</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu">Child-Category</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('create_childsubcategory')}}">Add Child-Category</a></li>
+                                <li><a href="{{route('all_childsubcategory')}}">All Child-Category</a></li>
+                            </ul>
+                        </li>
                         @if(Auth::user()->role<='2')
                         <li> <a class="waves-effect waves-dark" href="{{url('admin/banner')}}" aria-expanded="false"><i class="mdi mdi-image"></i><span class="hide-menu">Banner</span></a></li>
                         @endif
