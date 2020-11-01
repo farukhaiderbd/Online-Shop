@@ -58,11 +58,15 @@ class CategoryController extends Controller
             $imageName='Cat'.'_'.time().'.'.$image->getClientOriginalExtension();
             Image::make($image)->save('public/uploads/category/'.$imageName);
             $category->image = 'public/uploads/category/'.$imageName;
-            $category->save();
-            return redirect()->back();
+           $category->save();
+            $slug =Str::slug($request->name);
+            return redirect()->route('edit_category',$slug);
         }
-        $category->save();
-        return redirect()->back();
+
+       $category->save();
+
+        $slug =Str::slug($request->name);
+        return redirect()->route('edit_category',$slug);
 
     }
     public function softdelete(Request $request)

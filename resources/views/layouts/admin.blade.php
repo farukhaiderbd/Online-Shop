@@ -174,10 +174,10 @@
                                 <li><a href="{{route('all_subcategory')}}">All Sub-Category</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu">Child-Category</span></a>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu">Product</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{route('create_childsubcategory')}}">Add Child-Category</a></li>
-                                <li><a href="{{route('all_childsubcategory')}}">All Child-Category</a></li>
+                                <li><a href="{{route('create_product')}}">Add Product</a></li>
+                                <li><a href="{{route('all_product')}}">All Product</a></li>
                             </ul>
                         </li>
                         @if(Auth::user()->role<='2')
