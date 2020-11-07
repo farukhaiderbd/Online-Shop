@@ -16,6 +16,7 @@
     <link href="{{asset('public/contents/admin')}}/css/style.css" rel="stylesheet">
     <script src="{{asset('public/contents/admin')}}/assets/plugins/jquery/jquery.min.js"></script>
     <script src="{{asset('public/contents/admin')}}/js/sweetalert.min.js"></script>
+    @stack('css')
 </head>
 <body class="fix-header fix-sidebar card-no-border">
     <div id="main-wrapper">
@@ -170,7 +171,7 @@
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu">Sub-Category</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{route("create_subcategory")}}">Add Sub-Category</a></li>
+                                <li><a href="{{route('create_subcategory')}}">Add Sub-Category</a></li>
                                 <li><a href="{{route('all_subcategory')}}">All Sub-Category</a></li>
                             </ul>
                         </li>
@@ -232,6 +233,7 @@
     <script src="{{asset('public/contents/admin')}}/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="{{asset('public/contents/admin')}}/js/custom.js"></script>
     @stack('js')
+    @yield('js_test')
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller{
@@ -10,6 +11,7 @@ class WebsiteController extends Controller{
     }
 
     public function index(){
-        return view('website.home');
+        $categories =Category::where('status',1)->limit(10)->get();
+        return view('website.home',compact('categories'));
     }
 }

@@ -80,7 +80,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('products','ProductController@index')->name('all_product');
     Route::get('product/create','ProductController@create')->name('create_product');
     Route::post('product/store','ProductController@store')->name('store_product');
-    Route::get('product/edit/{slug}','ProductController@edit')->name('edit_product');
+    Route::get('product/edit/{id}','ProductController@edit')->name('edit_product');
+    Route::get('product/view/{id}','ProductController@view')->name('view_product');
     Route::post('product/update','ProductController@update')->name('update_product');
     Route::post('product/softdelete/','ProductController@softdelete')->name('softdelete_product');
     Route::get('product/delete/{id}','ProductController@delete')->name('delete_product');

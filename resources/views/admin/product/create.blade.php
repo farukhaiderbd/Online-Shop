@@ -10,10 +10,10 @@
       <div class="card-header">
           <div class="row">
               <div class="col-md-8 card_top_title">
-                  <i class="fa fa-gg-circle"></i> Upload Banner Information
+                  <i class="fa fa-gg-circle"></i> Upload product Information
               </div>
               <div class="col-md-4 text-right card_top_btn">
-                  <a href="{{url('admin/banner')}}" class="btn btn-sm btn-info" ><i class="fa fa-th"></i> All Banner</a>
+                  <a href="{{route('all_product')}}" class="btn btn-sm btn-info" ><i class="fa fa-th"></i> All Product</a>
               </div>
           </div>
       </div>
@@ -191,13 +191,11 @@
     </form>
   </div>
 @endsection
-
 @push('js')
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
+{{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script> --}}
 {{-- <script src="{{ asset('contents/admin') }}/assets/plugins/icheck/icheck.min.js"></script>
 <script src="{{ asset('contents/admin') }}/assets/plugins/icheck/icheck.init.js"></script> --}}
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+{{-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" crossorigin="anonymous"></script>
 
 
