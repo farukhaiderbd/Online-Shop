@@ -1191,4 +1191,115 @@
     </div>
   </div>
 </div>
+
+
+
+    <!--product cart add modal-->
+
+<!-- Modal -->
+<div class="modal fade " id="cartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="exampleModalLabel">Product Short Description</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 16rem;">
+                <img src="" class="card-img-top" id="pimage" style="height: 240px;">
+                <div class="card-body">
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ml-auto">
+                <ul class="list-group">
+                  <li class="list-group-item"> <h5 class="card-title" id="pname"></h5></span></li>
+               <li class="list-group-item">Product code: <span id="pcode"> </span></li>
+                <li class="list-group-item">Category:  <span id="pcat"> </span></li>
+                <li class="list-group-item">SubCategory:  <span id="psubcat"> </span></li>
+                <li class="list-group-item">Brand: <span id="pbrand"> </span></li>
+                <li class="list-group-item">Stock: <span class="badge" id="stock" style="background: green; color:white;"></span></li>
+              </ul>
+            </div>
+            <div class="col-md-4 ">
+                <form action="{{route('insert.into.cart') }}" method="post">
+                  @csrf
+                  <input type="hidden" name="product_id" id="product_id">
+                  <div class="form-group" id="colordiv">
+                    <label for="">Color</label>
+                    <select name="color" class="form-control">
+                    </select>
+                  </div>
+                   <div class="form-group" id="sizediv" >
+                    <label for="exampleInputEmail1">Size</label>
+                    <select name="size" class="form-control" id="size">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Quantity</label>
+                    <input type="number" class="form-control" value="1" name="qty">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Add To Cart</button>
+                </form>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div
 @endsection
+
+@push('js')
+{{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> --}}
+{{-- </script> --}}
+{{-- <script src="{{ asset('contents/admin') }}/assets/plugins/icheck/icheck.min.js"></script>
+<script src="{{ asset('contents/admin') }}/assets/plugins/icheck/icheck.init.js"></script> --}}
+{{-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+ function productview(id){
+
+          $.ajax({
+                     url: "{{  url('/cart/product/view/') }}/"+id,
+                     type:"GET",
+                     dataType:"json",
+                     success:function(data) {
+
+                       $('#pname').text(data.product.name);
+                       $('#pimage').attr('src',data.product.image_one);
+                       $('#pcat').text(data.cat);
+                       $('#psubcat').text(data.subcat);
+                       $('#pbrand').text(data.product.brand_name);
+                       $('#pcode').text(data.product.code);
+                       $('#product_id').val(data.product.id);
+                       $('#stock').text(data.product.stock);
+                        var d =$('select[name="size"]').empty();
+                         $.each(data.size, function(key, value){
+                             $('select[name="size"]').append('<option value="'+ value +'">' + value + '</option>');
+                              if (data.size == "") {
+                                     $('#sizediv').hide();
+                              }else{
+                                    $('#sizediv').show();
+                              }
+                         });
+                        var d =$('select[name="color"]').empty();
+                         $.each(data.color, function(key, value){
+                             $('select[name="color"]').append('<option value="'+ value +'">' + value + '</option>');
+                               if (data.color == "") {
+                                     $('#colordiv').hide();
+                              } else{
+                                   $('#colordiv').show();
+                              }
+                         });
+             }
+      })
+    }
+</script>
+
+@endpush

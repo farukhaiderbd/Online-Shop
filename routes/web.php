@@ -21,6 +21,15 @@ Route::get('/', function () {
 Auth::routes();
 //website routes start
 Route::get('/', 'WebsiteController@index')->name('');
+
+Route::get('cart/product/view/{id}','CartController@ViewProduct');
+Route::get('/cart','CartController@showcart')->name('product_cart');
+Route::get('/checkout','CartController@checkout')->name('product_checkout');
+Route::post('/apply/coupon','CartController@applycoupon')->name('apply.coupon');
+Route::get('/remove/coupon','CartController@removecoupon')->name('coupon.remove');
+Route::get('/cart/remove/{id}','CartController@cartremove')->name('product_cart_remove');
+Route::post('/cart/update','CartController@UpdateCart')->name('product_cart_update');
+Route::post('insert/into/cart/','CartController@InsertCart')->name('insert.into.cart');
 //admin panel routes start
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin', 'AdminController@index')->name('');

@@ -91,7 +91,7 @@
                 <div class="action">
                   <div class="add-cart-button btn-group">
                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                    <button id="{{ $item->id }}" class="btn btn-primary cart-btn" data-toggle="modal" data-target="#cartmodal"  onclick="productview(this.id)">Add to Cart</button>
                   </div>
                 </div>
                 <!-- /.action -->
@@ -113,95 +113,46 @@
     <h3 class="section-title">Special Offer</h3>
     <div class="sidebar-widget-body outer-top-xs">
       <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
-        <div class="item">
-          <div class="products special-product">
-            <div class="product">
-              <div class="product-micro">
-                <div class="row product-micro-row">
-                  <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p30.jpg" alt=""> </a> </div>
-                      <!-- /.image -->
+            @php
+                $special_offer = App\Product::where('best_rated',1)->limit(12)->get();
+            @endphp
+            @foreach ($special_offer as $item)
+            <div class="item">
+            <div class="products special-product">
+                <div class="product">
+                <div class="product-micro">
+                    <div class="row product-micro-row">
+                    <div class="col col-xs-5">
+                        <div class="product-image">
+                        <div class="image"> <a href="#"> <img src="{{ URL::to($item->image_one) }}" alt=""> </a> </div>
+                        <!-- /.image -->
 
+                        </div>
+                        <!-- /.product-image -->
                     </div>
-                    <!-- /.product-image -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col col-xs-7">
-                    <div class="product-info">
-                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                      <div class="rating rateit-small"></div>
-                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                      <!-- /.product-price -->
+                    <!-- /.col -->
+                    <div class="col col-xs-7">
+                        <div class="product-info">
+                        <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
+                        <div class="rating rateit-small"></div>
+                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                        <!-- /.product-price -->
 
+                        </div>
                     </div>
-                  </div>
-                  <!-- /.col -->
+                    <!-- /.col -->
+                    </div>
+                    <!-- /.product-micro-row -->
                 </div>
-                <!-- /.product-micro-row -->
-              </div>
-              <!-- /.product-micro -->
+                <!-- /.product-micro -->
+
+                </div>
+
 
             </div>
-            <div class="product">
-              <div class="product-micro">
-                <div class="row product-micro-row">
-                  <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p29.jpg" alt=""> </a> </div>
-                      <!-- /.image -->
-
-                    </div>
-                    <!-- /.product-image -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col col-xs-7">
-                    <div class="product-info">
-                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                      <div class="rating rateit-small"></div>
-                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                      <!-- /.product-price -->
-
-                    </div>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
-              </div>
-              <!-- /.product-micro -->
-
-            </div>
-            <div class="product">
-              <div class="product-micro">
-                <div class="row product-micro-row">
-                  <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p28.jpg" alt=""> </a> </div>
-                      <!-- /.image -->
-
-                    </div>
-                    <!-- /.product-image -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col col-xs-7">
-                    <div class="product-info">
-                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                      <div class="rating rateit-small"></div>
-                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                      <!-- /.product-price -->
-
-                    </div>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
-              </div>
-              <!-- /.product-micro -->
-
-            </div>
-          </div>
         </div>
-        <div class="item">
+    @endforeach
+        {{-- <div class="item">
           <div class="products special-product">
             <div class="product">
               <div class="product-micro">
@@ -375,7 +326,7 @@
 
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
     <!-- /.sidebar-widget-body -->
@@ -724,3 +675,4 @@
 
   <div class="home-banner"> <img src="{{asset('contents/website')}}/assets/images/banners/LHS-banner.jpg" alt="Image"> </div>
 </div>
+

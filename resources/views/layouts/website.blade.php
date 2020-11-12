@@ -455,5 +455,6 @@
     <script src="{{asset('public/contents/website')}}/assets/js/bootstrap-select.min.js"></script>
     <script src="{{asset('public/contents/website')}}/assets/js/wow.min.js"></script>
     <script src="{{asset('public/contents/website')}}/assets/js/scripts.js"></script>
+    @stack('js')
   </body>
 </html>
