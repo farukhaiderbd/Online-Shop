@@ -947,7 +947,6 @@
                     <div class="description"></div>
                     <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                     <!-- /.product-price -->
-
                   </div>
                   <!-- /.product-info -->
                   <div class="cart clearfix animate-effect">
@@ -966,30 +965,25 @@
                   <!-- /.cart -->
                 </div>
                 <!-- /.product -->
-
               </div>
               <!-- /.products -->
             </div>
             <!-- /.item -->
-
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
                     <div class="image"> <a href="detail.html"><img  src="{{asset('public/contents/website')}}/assets/images/products/p30.jpg" alt=""></a> </div>
                     <!-- /.image -->
-
                     <div class="tag hot"><span>hot</span></div>
                   </div>
                   <!-- /.product-image -->
-
                   <div class="product-info text-left">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
                     <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                     <!-- /.product-price -->
-
                   </div>
                   <!-- /.product-info -->
                   <div class="cart clearfix animate-effect">
@@ -1008,30 +1002,25 @@
                   <!-- /.cart -->
                 </div>
                 <!-- /.product -->
-
               </div>
               <!-- /.products -->
             </div>
             <!-- /.item -->
-
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
                     <div class="image"> <a href="detail.html"><img  src="{{asset('public/contents/website')}}/assets/images/products/p1.jpg" alt=""></a> </div>
                     <!-- /.image -->
-
                     <div class="tag hot"><span>hot</span></div>
                   </div>
                   <!-- /.product-image -->
-
                   <div class="product-info text-left">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
                     <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                     <!-- /.product-price -->
-
                   </div>
                   <!-- /.product-info -->
                   <div class="cart clearfix animate-effect">
@@ -1050,30 +1039,25 @@
                   <!-- /.cart -->
                 </div>
                 <!-- /.product -->
-
               </div>
               <!-- /.products -->
             </div>
             <!-- /.item -->
-
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
                     <div class="image"> <a href="detail.html"><img  src="{{asset('public/contents/website')}}/assets/images/products/p2.jpg" alt=""></a> </div>
                     <!-- /.image -->
-
                     <div class="tag sale"><span>sale</span></div>
                   </div>
                   <!-- /.product-image -->
-
                   <div class="product-info text-left">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
-                    <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
+                    <div class="product-price"><span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                     <!-- /.product-price -->
-
                   </div>
                   <!-- /.product-info -->
                   <div class="cart clearfix animate-effect">
@@ -1092,30 +1076,25 @@
                   <!-- /.cart -->
                 </div>
                 <!-- /.product -->
-
               </div>
               <!-- /.products -->
             </div>
             <!-- /.item -->
-
             <div class="item item-carousel">
               <div class="products">
                 <div class="product">
                   <div class="product-image">
                     <div class="image"> <a href="detail.html"><img  src="{{asset('public/contents/website')}}/assets/images/products/p3.jpg" alt=""></a> </div>
                     <!-- /.image -->
-
                     <div class="tag sale"><span>sale</span></div>
                   </div>
                   <!-- /.product-image -->
-
                   <div class="product-info text-left">
                     <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
                     <div class="rating rateit-small"></div>
                     <div class="description"></div>
                     <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                     <!-- /.product-price -->
-
                   </div>
                   <!-- /.product-info -->
                   <div class="cart clearfix animate-effect">
@@ -1134,7 +1113,6 @@
                   <!-- /.cart -->
                 </div>
                 <!-- /.product -->
-
               </div>
               <!-- /.products -->
             </div>
@@ -1144,7 +1122,6 @@
         </section>
         <!-- /.section -->
         <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
-
       </div>
       <!-- /.homebanner-holder -->
       <!-- ============================================== CONTENT : END ============================================== -->

@@ -11,12 +11,16 @@ use Cart;
 use Response;
 use DB;
 use Auth;
+use Laravel\Ui\Presets\React;
 use Session;
 class CartController extends Controller
 {
+
+
     // ajax request to add cart add here start
     // public function AddCart($id)
     // {
+
     //   $product = Product::findorfail($id);
     //   $data = array();
     //   if ($product->discount_price == NULL) {
@@ -58,6 +62,7 @@ class CartController extends Controller
     public function ViewProduct($id)
     {
 
+
     //   $product = DB::table('products')
     //                                 ->join('categories','products.category_id','categories.id')
     //                                 ->join('sub_categories','products.subcategory_id','sub_categories.id')
@@ -67,7 +72,7 @@ class CartController extends Controller
     $product = Product::find($id);
         $category = $product->category->name;
         $subcategory = $product->subcategory->name;
-        
+
               $color =$product->color;
               $product_color = explode(',', $color);
 
@@ -90,11 +95,13 @@ class CartController extends Controller
     public function InsertCart(Request $request)
     {
         // dd($request->all());
+
+
       $id =$request->product_id;
       $color =$request->color;
       $size =$request->size;
       $qty =$request->qty;
-      $product = Product::where('product_stock', 'Available')->find($id);
+      $product = Product::where('stock', 'Available')->find($id);
       $data = array();
       if ($product) {
       if ($product->discount_price == NULL) {

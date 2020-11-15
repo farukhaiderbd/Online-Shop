@@ -17,14 +17,14 @@
                   @php
                       $subcats = App\Subcategory::where('category_id',$category->id)->get();
                   @endphp
+                    @foreach ($subcats as $item)
                 <div class="col-sm-12 col-md-3">
                   <ul class="links list-unstyled">
-                    @foreach ($subcats as $item)
                     <li><a href="#">{{ $item->name }}</a></li>
-                    @endforeach
 
-                  </ul>
-                </div>
+                </ul>
+            </div>
+            @endforeach
 
                 <!-- /.col -->
               </div>
@@ -114,219 +114,126 @@
     <div class="sidebar-widget-body outer-top-xs">
       <div class="owl-carousel sidebar-carousel special-offer custom-carousel owl-theme outer-top-xs">
             @php
-                $special_offer = App\Product::where('best_rated',1)->limit(12)->get();
+                $special_offer = App\Product::where('best_rated',1)->limit(9)->OrderBy('id','DESC')->get();
             @endphp
-            @foreach ($special_offer as $item)
-            <div class="item">
-            <div class="products special-product">
-                <div class="product">
-                <div class="product-micro">
-                    <div class="row product-micro-row">
-                    <div class="col col-xs-5">
-                        <div class="product-image">
-                        <div class="image"> <a href="#"> <img src="{{ URL::to($item->image_one) }}" alt=""> </a> </div>
-                        <!-- /.image -->
 
-                        </div>
-                        <!-- /.product-image -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col col-xs-7">
-                        <div class="product-info">
-                        <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                        <div class="rating rateit-small"></div>
-                        <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                        <!-- /.product-price -->
-
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    </div>
-                    <!-- /.product-micro-row -->
-                </div>
-                <!-- /.product-micro -->
-
-                </div>
-
-
-            </div>
-        </div>
-    @endforeach
-        {{-- <div class="item">
+        <div class="item">
           <div class="products special-product">
-            <div class="product">
+              @foreach ($special_offer  as $key => $item)
+              @if($key <= 2)
+              <div class="product">
               <div class="product-micro">
-                <div class="row product-micro-row">
+                  <div class="row product-micro-row">
                   <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p27.jpg" alt=""> </a> </div>
+                      <div class="product-image">
+                      <div class="image"> <a href="#"> <img src="{{ URL::to($item->image_one) }}" alt=""> </a> </div>
                       <!-- /.image -->
 
-                    </div>
-                    <!-- /.product-image -->
+                      </div>
+                      <!-- /.product-image -->
                   </div>
                   <!-- /.col -->
                   <div class="col col-xs-7">
-                    <div class="product-info">
+                      <div class="product-info">
                       <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                       <div class="rating rateit-small"></div>
                       <div class="product-price"> <span class="price"> $450.99 </span> </div>
                       <!-- /.product-price -->
 
-                    </div>
+                      </div>
                   </div>
                   <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
+                  </div>
+                  <!-- /.product-micro-row -->
               </div>
               <!-- /.product-micro -->
 
-            </div>
-            <div class="product">
-              <div class="product-micro">
-                <div class="row product-micro-row">
-                  <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p26.jpg" alt=""> </a> </div>
-                      <!-- /.image -->
-
-                    </div>
-                    <!-- /.product-image -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col col-xs-7">
-                    <div class="product-info">
-                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                      <div class="rating rateit-small"></div>
-                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                      <!-- /.product-price -->
-
-                    </div>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
               </div>
-              <!-- /.product-micro -->
 
-            </div>
-            <div class="product">
-              <div class="product-micro">
-                <div class="row product-micro-row">
-                  <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p25.jpg" alt=""> </a> </div>
-                      <!-- /.image -->
 
-                    </div>
-                    <!-- /.product-image -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col col-xs-7">
-                    <div class="product-info">
-                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                      <div class="rating rateit-small"></div>
-                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                      <!-- /.product-price -->
+              @endif
+              @endforeach
 
-                    </div>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
-              </div>
-              <!-- /.product-micro -->
-
-            </div>
           </div>
         </div>
         <div class="item">
           <div class="products special-product">
-            <div class="product">
+              @foreach ($special_offer  as $key => $item)
+              @if($key >2 && $key <=5)
+              <div class="product">
               <div class="product-micro">
-                <div class="row product-micro-row">
+                  <div class="row product-micro-row">
                   <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p24.jpg"  alt=""> </a> </div>
+                      <div class="product-image">
+                      <div class="image"> <a href="#"> <img src="{{ URL::to($item->image_one) }}" alt=""> </a> </div>
                       <!-- /.image -->
 
-                    </div>
-                    <!-- /.product-image -->
+                      </div>
+                      <!-- /.product-image -->
                   </div>
                   <!-- /.col -->
                   <div class="col col-xs-7">
-                    <div class="product-info">
+                      <div class="product-info">
                       <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
                       <div class="rating rateit-small"></div>
                       <div class="product-price"> <span class="price"> $450.99 </span> </div>
                       <!-- /.product-price -->
 
-                    </div>
+                      </div>
                   </div>
                   <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
+                  </div>
+                  <!-- /.product-micro-row -->
               </div>
               <!-- /.product-micro -->
 
-            </div>
-            <div class="product">
-              <div class="product-micro">
-                <div class="row product-micro-row">
-                  <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p23.jpg" alt=""> </a> </div>
-                      <!-- /.image -->
-
-                    </div>
-                    <!-- /.product-image -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col col-xs-7">
-                    <div class="product-info">
-                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                      <div class="rating rateit-small"></div>
-                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                      <!-- /.product-price -->
-                    </div>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
               </div>
-              <!-- /.product-micro -->
 
-            </div>
-            <div class="product">
-              <div class="product-micro">
-                <div class="row product-micro-row">
-                  <div class="col col-xs-5">
-                    <div class="product-image">
-                      <div class="image"> <a href="#"> <img src="{{asset('contents/website')}}/assets/images/products/p22.jpg" alt=""> </a> </div>
-                      <!-- /.image -->
 
-                    </div>
-                    <!-- /.product-image -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col col-xs-7">
-                    <div class="product-info">
-                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
-                      <div class="rating rateit-small"></div>
-                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
-                      <!-- /.product-price -->
+              @endif
+              @endforeach
 
-                    </div>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.product-micro-row -->
-              </div>
-              <!-- /.product-micro -->
-
-            </div>
           </div>
-        </div> --}}
+        </div>
+        <div class="item">
+          <div class="products special-product">
+              @foreach ($special_offer  as $key => $item)
+              @if($key >5 && $key <=9)
+              <div class="product">
+              <div class="product-micro">
+                  <div class="row product-micro-row">
+                  <div class="col col-xs-5">
+                      <div class="product-image">
+                      <div class="image"> <a href="#"> <img src="{{ URL::to($item->image_one) }}" alt=""> </a> </div>
+                      <!-- /.image -->
+
+                      </div>
+                      <!-- /.product-image -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col col-xs-7">
+                      <div class="product-info">
+                      <h3 class="name"><a href="#">Floral Print Shirt</a></h3>
+                      <div class="rating rateit-small"></div>
+                      <div class="product-price"> <span class="price"> $450.99 </span> </div>
+                      <!-- /.product-price -->
+
+                      </div>
+                  </div>
+                  <!-- /.col -->
+                  </div>
+                  <!-- /.product-micro-row -->
+              </div>
+              <!-- /.product-micro -->
+
+              </div>
+
+
+              @endif
+              @endforeach
+
+          </div>
+        </div>
       </div>
     </div>
     <!-- /.sidebar-widget-body -->
@@ -555,6 +462,8 @@
                 <!-- /.product-micro-row -->
               </div>
               <!-- /.product-micro -->
+
+
 
             </div>
             <div class="product">
