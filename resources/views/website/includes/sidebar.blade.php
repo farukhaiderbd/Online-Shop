@@ -188,8 +188,6 @@
               <!-- /.product-micro -->
 
               </div>
-
-
               @endif
               @endforeach
 
@@ -428,7 +426,6 @@
                 <!-- /.product-micro-row -->
               </div>
               <!-- /.product-micro -->
-
             </div>
           </div>
         </div>
@@ -462,9 +459,6 @@
                 <!-- /.product-micro-row -->
               </div>
               <!-- /.product-micro -->
-
-
-
             </div>
             <div class="product">
               <div class="product-micro">

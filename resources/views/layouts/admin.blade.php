@@ -16,6 +16,7 @@
     <link href="{{asset('public/contents/admin')}}/css/style.css" rel="stylesheet">
     <script src="{{asset('public/contents/admin')}}/assets/plugins/jquery/jquery.min.js"></script>
     <script src="{{asset('public/contents/admin')}}/js/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     @stack('css')
 </head>
 <body class="fix-header fix-sidebar card-no-border">
@@ -232,6 +233,26 @@
     <script src="{{asset('public/contents/admin')}}/js/dashboard1.js"></script>
     <script src="{{asset('public/contents/admin')}}/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="{{asset('public/contents/admin')}}/js/custom.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+        @if(Session::has('messege'))
+            var type="{{Session::get('alert-type','info')}}"
+            switch(type){
+                case 'info':
+                    toastr.info("{{ Session::get('messege') }}");
+                    break;
+                case 'success':
+                    toastr.success("{{ Session::get('messege') }}");
+                    break;
+                case 'warning':
+                    toastr.warning("{{ Session::get('messege') }}");
+                    break;
+                case 'error':
+                    toastr.error("{{ Session::get('messege') }}");
+                    break;
+            }
+        @endif
+        </script>
     @stack('js')
     @yield('js_test')
 </body>

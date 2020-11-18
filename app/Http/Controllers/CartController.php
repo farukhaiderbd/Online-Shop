@@ -96,23 +96,27 @@ class CartController extends Controller
     {
         // dd($request->all());
 
-
       $id =$request->product_id;
       $color =$request->color;
       $size =$request->size;
       $qty =$request->qty;
+
+
+
       $product = Product::where('stock', 'Available')->find($id);
       $data = array();
       if ($product) {
-      if ($product->discount_price == NULL) {
+      if ($product->discount_price == '') {
+
     	  	            $data['id']=$product->id;
-    	                $data['name']=$product->product_name;
+    	                $data['name']=$product->name;
     	                $data['qty']=$qty;
     	                $data['price']= $product->selling_price;
     	 				$data['weight']=1;
     	                $data['options']['image']=$product->image_one;
                         $data['options']['color']=$color;
                         $data['options']['size']=$size;
+
                        Cart::add($data);
                      $notification=array(
                               'messege'=>'Successfully Done',
@@ -120,20 +124,22 @@ class CartController extends Controller
                          );
                          return redirect()->back()->with($notification);
     	   }else{
+
     	                $data['id']=$product->id;
-    	                $data['name']=$product->product_name;
+    	                $data['name']=$product->name;
     	                $data['qty']=$qty;
     	                $data['price']= $product->discount_price;
     	 				$data['weight']=1;
     	                $data['options']['image']=$product->image_one;
                         $data['options']['color']=$color;
                         $data['options']['size']=$size;
+
                         Cart::add($data);
                       $notification=array(
                                 'messege'=>'Successfully Done',
                                  'alert-type'=>'success'
                            );
-                           return redirect()->back()->with($notification);
+                           return redirect()->back()->with(['messege'=>'Successfully Done','alert-type'=>'success']);
     	 }
      }else {
        $notification=array(
@@ -199,11 +205,12 @@ class CartController extends Controller
     public function showcart()
     {
       $cart = Cart::content();
-      return view('website.cart', compact('cart'));
+      return view('website.pages.cart', compact('cart'));
     }
     public function cartremove($id)
     {
       $cart =Cart::remove($id);
+
       $notification=array(
                 'messege'=>'This iteam deleted',
                  'alert-type'=>'error'
