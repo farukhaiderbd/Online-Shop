@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
 Auth::routes();
 //website routes start
 Route::get('/', 'WebsiteController@index')->name('');
@@ -30,6 +35,15 @@ Route::get('/remove/coupon','CartController@removecoupon')->name('coupon.remove'
 Route::get('/cart/remove/{id}','CartController@cartremove')->name('product_cart_remove');
 Route::post('/cart/update','CartController@UpdateCart')->name('product_cart_update');
 Route::post('insert/into/cart/','CartController@InsertCart')->name('insert.into.cart');
+
+Route::get('payment/page/','CheckoutController@PymentPage')->name('payment.step');
+
+//payment methods
+Route::post('payment/process/','PaymentController@payment')->name('payment.process');
+Route::post('user/stripe/charge/','PaymentController@STripeCharge')->name('stripe.charge');
+
+Route::get('success/list/','PaymentController@SuccessList')->name('success.orderlist');
+Route::get('request/return/{id}','PaymentController@RequestReturn');
 //admin panel routes start
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin', 'AdminController@index')->name('');

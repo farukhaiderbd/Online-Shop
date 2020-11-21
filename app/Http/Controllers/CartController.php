@@ -235,12 +235,13 @@ class CartController extends Controller
     }
     public function checkout()
     {
-        return view('website.checkout');
+        return view('website.pages.checkout');
     }
     public function applycoupon(Request $request)
     {
+
         $coupon= $request->coupon;
-    $check = Coupon::where('code', $coupon)->where('status', 1)->first();
+        $check = Coupon::where('code', $coupon)->where('status', 1)->first();
 
 
     if ($check) {
@@ -250,20 +251,24 @@ class CartController extends Controller
             'balance' => Cart::Subtotal() - $check->price
         ]);
             $notification=array(
-                            'messege'=>'apply your coupon',
+                            'messege'=>'apply your coupon successfuly',
                                 'alert-type'=>'success'
                         );
                             return redirect()->back()->with($notification);
     }
     $notification=array(
                         'messege'=>'Invalied Coupon',
-                        'alert-type'=>'success'
+                        'alert-type'=>'error'
                     );
                     return redirect()->back()->with($notification);
         }
         public function removecoupon()
         {
             session::forget('coupon');
-            return redirect()->back();
+            $notification=array(
+                'messege'=>'Coupon Removed',
+                'alert-type'=>'error'
+            );
+            return redirect()->back()->with($notification);
         }
 }

@@ -1,7 +1,9 @@
 @extends('layouts.website')
+@push('css')
+<link rel="stylesheet" type="text/css" href="{{ asset('public/contents/website/assets/css/cart_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/contents/website/assets/css/cart_responsive.css') }}">
+@endpush
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('contents/website/assets/css/cart_styles.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('contents/website/assets/css/cart_responsive.css') }}">
 
 	<!-- Cart -->
 	<div class="cart_section">
@@ -56,13 +58,14 @@
 
 						</div>
 						     <div class="order_total_content " style="padding: 14px;">
-					      	@if(Session::has('coupon'))
+                              @if(Session::has('coupon'))
+
 										@else
 							     <h5>Apply Coupon</h5>
 							     <form action="{{ route('apply.coupon') }}" method="post">
 							     	@csrf
 							     	 <div class="form-group col-lg-4">
-                        <input type="text" class="form-control" name="coupon" required=""  aria-describedby="emailHelp" placeholder="Coupon Code">
+                                    <input type="text" class="form-control" name="coupon" required=""  aria-describedby="emailHelp" placeholder="Coupon Code">
                      </div>
                      <button type="submit" class="btn btn-danger ml-2">submit</button>
 							     </form>
@@ -78,11 +81,11 @@
 							  	@endif
 
 							  <li class="list-group-item">Shipping Charge: <span style="float: right;"> 00 </span></li>
-							  <li class="list-group-item">Vat :  <span style="float: right;"> 0</span></li>
+							  <li class="list-group-item">Vat :  <span style="float: right;"> 00</span></li>
 							  @if(Session::has('coupon'))
 							  <li class="list-group-item">Total:  <span style="float: right;"> $ {{ Session::get('coupon')['balance'] }}</span> </li>
 							  @else
-							       <li class="list-group-item">Total:  <span style="float: right;">$ </span> </li>
+							       <li class="list-group-item">Total:  <span style="float: right;">$ {{ Cart::subtotal() }}</span> </li>
 							  @endif
 						</ul>
 					</div>

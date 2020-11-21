@@ -179,7 +179,7 @@
 						Subtotal<span class="inner-left-md">{{ \Cart::subtotal() }}</span>
 					</div>
 					<div class="cart-grand-total">
-						Grand Total<span class="inner-left-md">{{ \Cart::total() }}</span>
+						Grand Total<span class="inner-left-md">{{ \Cart::subtotal() }}</span>
 					</div>
 				</th>
 			</tr>
