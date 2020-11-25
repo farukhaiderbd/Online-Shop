@@ -1,44 +1,42 @@
-@extends('layouts.app')
+@extends('layouts.website')
+
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+@push('css')
+<style>
+    /**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  box-sizing: border-box;
 
-<link rel="stylesheet" type="text/css" href="{{ asset('contents/website/assets/css/contact_styles.css')}}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  height: 40px;
 
-<style type="text/css">
-	/**
-	 * The CSS shown here will not be introduced in the Quickstart guide, but shows
-	 * how you can use CSS to style your Element's container.
-	 */
-	.StripeElement {
-	  box-sizing: border-box;
+  padding: 10px 12px;
 
-	  height: 40px;
-	  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
 
-	  padding: 10px 12px;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
 
-	  border: 1px solid transparent;
-	  border-radius: 4px;
-	  background-color: white;
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
 
-	  box-shadow: 0 1px 3px 0 #e6ebf1;
-	  -webkit-transition: box-shadow 150ms ease;
-	  transition: box-shadow 150ms ease;
-	}
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
 
-	.StripeElement--focus {
-	  box-shadow: 0 1px 3px 0 #cfd7df;
-	}
-
-	.StripeElement--invalid {
-	  border-color: #fa755a;
-	}
-
-	.StripeElement--webkit-autofill {
-	  background-color: #fefde5 !important;
-	}
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;}
 </style>
+@endpush
+@section('content')
+
 @php
    $cart=Cart::content();
 @endphp
@@ -100,7 +98,7 @@
 						<ul class="list-group col-lg-8" >
 							  @if(Session::has('coupon'))
 							       <li class="list-group-item">Subtotal :  <span style="float: right;"> $ {{ Session::get('coupon')['balance'] }}</span> </li>
-							        <li class="list-group-item">Coupon : ({{   Session::get('coupon')['name'] }})  <span style="float: right;"> $  {{ Session::get('coupon')['discount'] }} </span> </li>
+							        <li class="list-group-item">Coupon : ({{   Session::get('coupon')['name'] }})  <span style="float: right;"> $  {{ Session::get('coupon')['balance'] }} </span> </li>
 							  	@else
 							  	  <li class="list-group-item">Subtotal :  <span style="float: right;"> $ {{ Cart::Subtotal() }}</span> </li>
 							  	@endif
@@ -121,7 +119,7 @@
                  <div class="col-lg-5 " style=" padding: 20px;">
                     <div class="contact_form_container">
                         <div class="contact_form_title text-center">Pay Now </div>
-
+                        <script src="https://js.stripe.com/v3/"></script>
                         <form action="{{ route('stripe.charge') }}" method="post" id="payment-form" style="border: 1px solid grey; padding: 20px;">
                         	@csrf
                           <div class="form-row">
@@ -164,8 +162,11 @@
         <div class="panel"></div>
     </div>
 
-<script type="text/javascript">
-	// Create a Stripe client.
+
+@endsection
+@push('js')
+<script>
+    // Create a Stripe client.
 var stripe = Stripe('pk_test_51GqiXrC7T5M9E4iCEFqqKDm9uiZ0bzzy9XZ5hUC32xPSP86WeN8OfX37APik6sh9kGuepwIKVXTYMJec8nd4JOqc004OPZkU6s');
 
 // Create an instance of Elements.
@@ -194,9 +195,8 @@ var card = elements.create('card', {style: style});
 
 // Add an instance of the card Element into the `card-element` <div>.
 card.mount('#card-element');
-
 // Handle real-time validation errors from the card Element.
-card.addEventListener('change', function(event) {
+card.on('change', function(event) {
   var displayError = document.getElementById('card-errors');
   if (event.error) {
     displayError.textContent = event.error.message;
@@ -236,4 +236,4 @@ function stripeTokenHandler(token) {
   form.submit();
 }
 </script>
-@endsection
+@endpush

@@ -155,6 +155,7 @@ class CartController extends Controller
       $wishlist_id =$request->wishlist_id;
       $wishlist = Wishlist::findorfail($wishlist_id);
       $product = Product::where('product_stock', 'Available')->find($id);
+
       $data = array();
       if ($product) {
       if ($product->discount_price == NULL) {
@@ -239,10 +240,8 @@ class CartController extends Controller
     }
     public function applycoupon(Request $request)
     {
-
         $coupon= $request->coupon;
         $check = Coupon::where('code', $coupon)->where('status', 1)->first();
-
 
     if ($check) {
         session::put('coupon',[
