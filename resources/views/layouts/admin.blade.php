@@ -193,6 +193,12 @@
                                 <li><a href="{{url('#')}}">Copyright</a></li>
                             </ul>
                         </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings-box"></i><span class="hide-menu">Order</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('pendding_order')}}">Pending Order</a></li>
+                                <li><a href="{{route('processing_order')}}">Processing Order</a></li>
+                            </ul>
+                        </li>
                         <li> <a class="waves-effect waves-dark" href="{{url('/')}}" target="_blank" aria-expanded="false"><i class="fa fa-globe"></i><span class="hide-menu">Live Site</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="mdi mdi-power"></i><span class="hide-menu">Logout</span></a></li>
                     </ul>

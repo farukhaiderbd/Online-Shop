@@ -79,6 +79,7 @@ $data['email'] = $request->ship_email;
 $data['phone'] = $request->ship_phone;
 $data['city'] = $request->ship_city;
 $data['zip'] = 1207;
+$data['status'] = 'pending';
 $data['shipping']=$request->shipping;
 $data['vat']=$request->vat;
 $data['total']=$request->total;

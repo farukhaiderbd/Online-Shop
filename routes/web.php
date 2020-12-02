@@ -25,7 +25,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
 Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
@@ -59,6 +58,10 @@ Route::post('user/stripe/charge/','PaymentController@STripeCharge')->name('strip
 
 Route::get('success/list/','PaymentController@SuccessList')->name('success.orderlist');
 Route::get('request/return/{id}','PaymentController@RequestReturn');
+Route::get('admin/pending-order','OrderController@pendingorder')->name('pendding_order');
+Route::get('admin/processing-order','OrderController@processingorder')->name('processing_order');
+// Rout::get('admin/pending-order','OrderController@pendingorder')->name('pendding_order');
+// Rout::get('admin/pending-order','OrderController@pendingorder')->name('pendding_order');
 //admin panel routes start
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin', 'AdminController@index')->name('');
