@@ -21,4 +21,47 @@ class OrderController extends Controller
     return view('admin.order.index',compact('order'));
 
    }
+   public function orderview($id)
+   {
+      $order= Order::find($id);
+      return view('admin.order.view', compact('order'));
+   }
+
+   public function paymentaccept($id)
+   {
+    //    $order = Order::find($id)->update(['status' => 'Proccessing']);
+
+    $order = Order::find($id);
+    $order->status = 'Processing';
+    $order->save();
+    return redirect()->back();
+   }
+   public function paymentcancle($id)
+   {
+    //    $order = Order::find($id)->update(['status' => 'Proccessing']);
+
+    $order = Order::find($id);
+    $order->status = 'Cancle';
+    $order->save();
+    return redirect()->back();
+   }
+   public function paymentprocessing($id)
+   {
+    //    $order = Order::find($id)->update(['status' => 'Proccessing']);
+
+    $order = Order::find($id);
+    $order->status = 'Done';
+    $order->save();
+    return redirect()->back();
+   }
+   public function paymentdone($id)
+   {
+    //    $order = Order::find($id)->update(['status' => 'Proccessing']);
+
+    $order = Order::find($id);
+    $order->status = 'Completed';
+    $order->save();
+    return redirect()->back();
+   }
+
 }

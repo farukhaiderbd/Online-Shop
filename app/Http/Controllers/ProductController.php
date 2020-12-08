@@ -30,6 +30,7 @@ class ProductController extends Controller
             'name.required' => 'This Product field required',
         ]);
             $slug = Str::slug($request->name);
+            
             $product = new Product();
             $product->name = $request->name;
             $product->code = $request->code;

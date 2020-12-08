@@ -60,6 +60,13 @@ Route::get('success/list/','PaymentController@SuccessList')->name('success.order
 Route::get('request/return/{id}','PaymentController@RequestReturn');
 Route::get('admin/pending-order','OrderController@pendingorder')->name('pendding_order');
 Route::get('admin/processing-order','OrderController@processingorder')->name('processing_order');
+Route::get('admin/order/view/{id}','OrderController@orderview')->name('order_view');
+
+Route::get('admin/order/payment-accept/{id}','OrderController@paymentaccept')->name('order_payment_accept');
+Route::get('admin/order/payment-cancle/{id}','OrderController@paymentcancle')->name('order_payment_cancle');
+Route::get('admin/order/processing/{id}','OrderController@paymentprocessing')->name('order_payment_processing');
+Route::get('admin/order/done/{id}','OrderController@paymentdone')->name('order_payment_done');
+
 // Rout::get('admin/pending-order','OrderController@pendingorder')->name('pendding_order');
 // Rout::get('admin/pending-order','OrderController@pendingorder')->name('pendding_order');
 //admin panel routes start

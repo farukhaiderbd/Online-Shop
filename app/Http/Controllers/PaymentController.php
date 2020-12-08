@@ -12,6 +12,7 @@ use Cart;
 use Session;
 use Mail;
 use App\Mail\InvoiceMail;
+use App\Mail\Order as MailOrder;
 use App\Order as AppOrder;
 use App\OrderDetails;
 
@@ -122,7 +123,9 @@ $order_id=Order::create($data)->id;
      $details['totalprice']=$row->qty * $row->price;
      OrderDetails::create($details);
    }
-//    Mail::to('farukhaidar3@gmail.com')->send(new InvoiceMail($data));
+  
+   Mail::to('farukhaidar3@gmail.com')->send(new MailOrder($data));
+
    Cart::destroy();
     if (Session::has('coupon')) {
 Session::forget('coupon');
