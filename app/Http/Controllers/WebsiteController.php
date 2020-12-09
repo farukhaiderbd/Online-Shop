@@ -14,4 +14,10 @@ class WebsiteController extends Controller{
         $categories =Category::where('status',1)->limit(10)->get();
         return view('website.home',compact('categories'));
     }
+
+
+    public function login()
+    {
+        echo 'customer login page';
+    }
 }

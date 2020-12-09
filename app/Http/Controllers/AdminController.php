@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller{
     public function __construct(){
         $this->middleware('auth');
+        $this->middleware('superadmin');
     }
 
     public function index(){
@@ -17,6 +18,6 @@ class AdminController extends Controller{
 
     public function access(){
         echo "You are not allow this page!";
-      
+
     }
 }

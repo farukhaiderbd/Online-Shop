@@ -8,7 +8,7 @@ use App\Library\SslCommerz\SslCommerzNotification;
 use App\Mail\Order;
 use Cart;
 use Mail;
-use OrderMail
+use OrderMail;
 class SslCommerzPaymentController extends Controller
 {
 
@@ -95,7 +95,7 @@ class SslCommerzPaymentController extends Controller
     public function payViaAjax(Request $request)
     {
 
-        // dd($request->input('tran_id'));
+        
 
         # Here you have to receive all the order data to initate the payment.
         # Lets your oder trnsaction informations are saving in a table called "orders"
@@ -153,7 +153,7 @@ class SslCommerzPaymentController extends Controller
                 'currency' => $post_data['currency']
             ]);
 
-            
+
 
         $sslc = new SslCommerzNotification();
         # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )

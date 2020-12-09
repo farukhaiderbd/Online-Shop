@@ -41,8 +41,10 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 
 //website routes start
 Route::get('/', 'WebsiteController@index')->name('');
+Route::get('customer/login', 'WebsiteController@login')->name('');
+Route::get('customer/home', 'CustomerController@home')->name('customer_dashboard');
 Route::get('cart/product/view/{id}','CartController@ViewProduct');
-Route::get('/cart','CartController@showcart')->name('product_cart');
+Route::get('/cart','CartController@showcart')->name('product_cart')->middleware(['auth','customer']);
 Route::get('/checkout','CartController@checkout')->name('product_checkout');
 Route::post('/apply/coupon','CartController@applycoupon')->name('apply.coupon');
 Route::get('/remove/coupon','CartController@removecoupon')->name('coupon.remove');
