@@ -12,7 +12,7 @@
         $social=App\SocialMedia::where('sm_status',1)->where('sm_id',1)->firstOrFail();
         $con=App\ContactInformation::where('ci_status',1)->where('ci_id',1)->firstOrFail();
     @endphp
-    <title>{{$basic->basic_title}}</title>
+    <title>{{ config('settings.homepage_header') }}</title>
     <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/main.css">
     <link rel="stylesheet" href="{{asset('public/contents/website')}}/assets/css/blue.css">
