@@ -39,6 +39,14 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
+  // Password Reset Routes...
+  Route::get('admin-password/forget', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+  Route::post('admin-password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+  Route::get('admin-password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('admin.password.reset');
+  Route::get('admin-password/reset', 'Auth\ResetPasswordController@reset');
+  Route::get('/admin/Change/Password','AdminController@ChangePassword')->name('admin.password.change');
+  Route::post('/admin/password/update','AdminController@Update_pass')->name('admin.password.update');
+
 //website routes start
 Route::get('/', 'WebsiteController@index')->name('');
 Route::get('customer/login', 'WebsiteController@login')->name('');
